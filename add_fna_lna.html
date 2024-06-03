@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add First & Last Name</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            margin-left: 30%;
+            height: 100%;
+            width: 450px;
+            border: 7px solid rgb(90, 24, 35);
+            background-color: rgb(179, 172, 192);
+            border-radius: 50px 0px;
+        }
+
+        #fName {
+            margin-top: 10%;
+            font-size: 18px;
+            margin-left: 5px;
+            background-color: rgb(223, 248, 246);
+        }
+
+        #lName {
+            font-size: 18px;
+            margin-left: 8px;
+            background-color: rgb(223, 248, 246);
+        }
+        label{
+            font-size: 25px;
+            margin-left: 10px;
+            font-weight: 900;
+        }
+
+        #btn{
+            margin: 10% 35%;
+            height: 50px;
+            font-size: 20px;
+            width: 100px;
+            font-weight: 900;
+            background-color: rgb(200, 174, 218);
+        }
+
+        #btn:hover{
+            background-color: rgb(15, 15, 77);
+            color: white;
+            border: 1px solid white;
+            font-weight: 900;
+        }
+
+        .submitData{
+            height: 100%;
+            width: 90%;
+            border: 3px solid rgb(90, 24, 35);
+        }
+ 
+        span{
+            font-size: 35px;
+            font-weight: 900;
+            color: rgb(65, 6, 6);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label> First Name:</label> <input type="text" placeholder="Enter Your First Name" id="fName"><br>
+        <label> Last Name:</label> <input type="text" placeholder="Enter Your Last Name" id="lName">
+       <input type="submit" value="submit" id="btn">
+       
+       <center><div class="submitData">
+          <div id="a"></div>
+       </div></center>
+    </div>
+
+
+    <script>
+        let fName=document.getElementById("fName");
+        let lName=document.getElementById("lName");
+        let btn=document.getElementById("btn");
+        let A=document.getElementById("a");
+        
+        btn.addEventListener("click", ()=>{
+            // console.log(fName.value);
+            // console.log(lName.value);
+            A.innerHTML+=`<span>${fName.value}</span>
+            <span>${lName.value}</span><br>`;
+            clearInputBox();
+        })
+
+        function clearInputBox(){
+            fName.value="";
+            lName.value="";
+        }
+
+    </script>
+</body>
+</html>
